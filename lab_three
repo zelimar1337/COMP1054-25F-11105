@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+body {
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header */
+.site-header {
+  display: flex;                  /* flex container */
+  justify-content: space-between; /* brand left, nav right */
+  align-items: center;            /* vertical center */
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.brand-link {
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+}
+
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #555;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #111;
+}
+
+/* Hero */
+.hero {
+  display: flex;              /* stack hero items */
+  flex-direction: column;
+  align-items: center;        /* center horizontally */
+  text-align: center;
+  gap: 0.75rem;
+  padding: 2.5rem 1rem;
+}
+
+.hero .lead {
+  color: #555;
+  max-width: 60ch;
+  margin: 0.25rem auto 0.75rem;
+}
+
+.hero-actions {
+  display: flex;              /* row of buttons */
+  flex-wrap: wrap;            /* wrap on small screens */
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #111;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+
+.btn.small {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.btn.primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+/*Album grid*/
+.album {
+  padding: 1rem 0 3rem;
+}
+
+.cards {
+  display: flex;   /* lay cards in a row */
+  flex-wrap: wrap; /* allow wrapping */
+  gap: 1rem;
+}
+
+.card {
+  display: flex;               /* column layout */
+  flex-direction: column;
+  flex: 1 1 320px;             /* flexible basis ~320px */
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumb {
+  background: #e5e7eb;
+  height: 180px;               /* placeholder */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.card-actions {
+  display: flex;       /* buttons + time in a row */
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: auto;    /* stick to bottom */
+}
+
+.meta {
+  color: #666;
+  margin-left: auto;   /* push timestamp right */
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #ddd;
+  text-align: center;
+  color: #666;
+  padding: 2rem 1rem 3rem;
+}
+
+.back-to-top {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* Reflection
+   1) Flexbox was a natural fit for the header (brand vs nav),
+      the hero actions row, and the album card grid.
+      Flex-wrap and flex-basis made the layout responsive.
+
+   2) It was possible but limited to control exact column counts
+      with Flexbox. CSS Grid would be better for strict 2/3/4
+      column layouts. Flexbox works fine for this lab though.
+*/
